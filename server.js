@@ -11,8 +11,8 @@ app.use(cors());
 const corOptions = {
 	origin: "http://localhost:5173",
 };
-app.use("/", cors(corOptions), authRoute);
-app.use("/", cors(corOptions), noteRoute);
+app.use("/", authRoute);
+app.use("/", noteRoute);
 app.get("/", (req, res) => {
 	console.log("Testing");
 	res.send("<h1>Hello</h1>");
