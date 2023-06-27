@@ -8,15 +8,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const corOptions = {
-	origin: "http://localhost:5173",
-};
 app.use("/", authRoute);
 app.use("/", noteRoute);
+
 app.get("/", (req, res) => {
 	console.log("Testing");
 	res.send("<h1>Hello</h1>");
 });
+
 app.listen(port, () => {
 	console.log(`Listening on port ${port}`);
 });
